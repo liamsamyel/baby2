@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To You, My Dearest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inter:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-green: #1a3622;
+            --cream: #f4f0e6;
+            --sage: #9caf9f;
+            --text-dark: #122617;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #000;
+            font-family: 'Lora', serif;
+            scroll-behavior: smooth;
+        }
+
+        
+        .grain {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 100;
+            background: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.06"/%3E%3C/svg%3E');
+        }
+
+        .zine-container {
+            height: 100vh;
+            width: 100vw;
+            max-width: 500px;
+            margin: 0 auto;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+            background-color: var(--cream);
+            position: relative;
+        }
+
+        .page {
+            min-height: 100vh;
+            width: 100%;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 2.5rem;
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+        }
+
+        .theme-dark { background-color: var(--dark-green); color: var(--cream); }
+        .theme-cream { background-color: var(--cream); color: var(--text-dark); }
+        .theme-sage { background-color: var(--sage); color: var(--text-dark); }
+
+        h1, h2, h3 { font-weight: 500; margin-bottom: 1.5rem; margin-top: 0; letter-spacing: 0.5px; }
+        p { 
+            font-size: 1.05rem; 
+            line-height: 1.85; 
+            margin-bottom: 1.2rem; 
+            margin-top: 0;
+        }
+        
+        .script { font-family: 'Dancing Script', cursive; font-size: 2.8rem; line-height: 1.2; }
+        .sans { font-family: 'Inter', sans-serif; letter-spacing: 1px; }
+        .left-align { text-align: left; align-items: flex-start; }
+        
+        
+        .photo-frame {
+            background: #fff;
+            padding: 10px 10px 35px 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            max-width: 85%;
+            margin: 2rem auto;
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+        }
+        .photo-frame img {
+            width: 100%;
+            height: auto;
+            border-radius: 1px;
+            filter: contrast(1.05) saturate(1.05); 
+        }
+        .tilt-left { transform: rotate(-2.5deg); }
+        .tilt-right { transform: rotate(3deg); }
+
+        .swipe-hint {
+            position: absolute;
+            bottom: 2.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.6;
+            animation: pulse 2.5s infinite;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.3; bottom: 2.5rem; }
+            50% { opacity: 0.8; bottom: 2rem; }
+            100% { opacity: 0.3; bottom: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<div class="zine-container">
+
+    
+    <section class="page theme-dark">
+        <div class="script" style="font-size: 4rem;">
+            To you,
+            <br>
+            my dearest
+        </div>
+        <div class="swipe-hint">Swipe up</div>
+    </section>
+
+    
+    <section class="page theme-dark left-align">
+        <div class="photo-frame tilt-right">
+            
+            <img src="drive-download-20261008T102658Z-1-001/fxn 2026-09-11 1732079E6276AF3EA0.jpg" alt="Photo 1"> 
+        </div>
+        <p>I made this little magazine for you, filled with words I've written, feelings I've felt, and memories I never want to forget.</p>
+        <p>Every page holds a little piece of us, but most importantly, a little piece of how much you mean to me.</p>
+        <p>I hope you enjoy reading this as much as I enjoyed making it for you.</p>
+        <p class="script" style="font-size: 1.8rem; margin-top: 1.5rem;">With all my love,<br>Liam</p>
+    </section>
+
+    
+    <section class="page theme-sage">
+        <h2 class="script">table of contents to</h2>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <h1 class="sans" style="font-size: 3rem;">XI</h1>
+        <p>There are eleven numbers before twelve, eleven steps before the next beginning, eleven on a calendar that would have meant nothing to me if it had not been the day you said yes.</p>
+        <p>Before that day, you were someone I was still learning to know. Someone whose messages I waited for, whose presence slowly became something I looked forward to, whose name began to carry a different kind of weight in my heart.</p>
+        <p>But on the eleventh, something changed.</p>
+        <p>You said yes.</p>
+        <p>And suddenly, a date became a memory. A number became a promise. And two people who were once simply finding their way toward each other became us.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <p>I don't think you knew how much that one word would mean to me.</p>
+        <p>You probably didn't know that I would remember the day, that I would count it among the days that changed my life, that whenever I see 11, some part of me will always return to that moment.</p>
+        <p>Because 11 is not just the day you became my girlfriend. It is the day I was given the chance to love you more honestly. To learn you beyond the things I first noticed.</p>
+        <p>To discover the little things that make you smile, the things that hurt you, the things you don't always say, and the parts of yourself you slowly allowed me to see.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <p>And maybe that is why 11 belongs to both of us.</p>
+        <p>It is not only the day you chose me. It is the day our lives began carrying a little piece of each other.</p>
+        <p>Whatever happens after this, whatever seasons we have yet to live through, I hope we never forget what 11 gave us: a beginning. A day that looked ordinary to everyone else but became unforgettable to me.</p>
+        <p>Because on 11, you said yes.</p>
+        <p>And somehow, that one word became one of the most beautiful chapters of my life.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <h2 class="sans" style="font-size: 2rem;">km</h2>
+        <p>sa loob ng tatlonpu't isang kilometro na layo, walang mas hihigit pa sa pagmamahal ko sa'yo.</p>
+        <p>hindi rason ang layong ito, para ikaw ay hindi dayuhin. marilao patungong hagonoy, kaya kong saglitin.</p>
+        <p>kahit sabihin mo'ng mahirap sumakay, matraffic, malayo, mapapagod lang ako. iyan lamang ay mga dahilan na kaya kong palampasin, dahil alam kong mawawala lahat ng 'yan kapag narating ko na ang destinasyon ko ikaw.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <div class="photo-frame tilt-left">
+            
+            <img src="drive-download-20261008T102658Z-1-001/fxn 2026-09-11 173239EBC6DE14E645.jpg" alt="Photo 2"> 
+        </div>
+        <p>at kung ang pagpunta sa'yo ay nangangailangan ng oras, pamasahe, at pagod, hindi ko iyon tinitingnan bilang sakripisyong dapat mong suklian. pupunta ako dahil gusto kitang makita, makasama, at mapalapit sa'yo kahit sa simpleng paraan.</p>
+        <p>dahil para sa akin, hindi naman sinusukat ang pagmamahal sa kung gaano kadali ang pagpunta. sinusukat ito sa kung gaano ako kahandang lumapit kahit may distansyang kailangang tawirin.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <p>mahal ko, hindi ako matatakot sa layo. tatahakin ko ang bawat kilometro, bawat kanto, bawat traffic, at bawat paghihintay, basta sa dulo ng lahat ng iyon, ikaw ang makikita ko.</p>
+        <p>at kung minsan ay sasabihin mong napakalayo mo, sasabihin ko namang hindi ka naman ganoon kalayo para sa akin. dahil kahit tatlumpu't isang kilometro pa ang pagitan natin, kaya kitang puntahan.</p>
+        <p>hindi dahil madali. kundi dahil ikaw ang gusto kong marating.</p>
+        <p>at sa bawat paglalakbay ko patungo sa'yo, sana'y maramdaman mong hindi lang ako basta pumupunta sa isang lugar. pinipili kitang puntahan. paulit-ulit, araw-araw, hangga't kaya ko.</p>
+        <p>dahil sa dami ng lugar na maaari kong puntahan, ikaw pa rin ang destinasyong gusto kong balikan.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <h2>Maybe someday, love will feel simple with you.</h2>
+        <p>Not in a way that makes it boring or ordinary, but in a way that makes it feel like home. Maybe someday, we’ll wake up beside each other and the first thing I see is your face in the morning light. Maybe we’ll have a little place of our own, maybe it’ll be too small for everything we want, and we’ll have to squeeze ourselves into one bed anyway. Maybe we’ll have our own little routines, our own jokes, our own things that only make sense to us.</p>
+        <p>I want to know you in all the little ways that time allows. I want to know the things you’ll love years from now, the things that will never change, and even the things that will. I want to know what makes you excited, what makes you nervous, what makes you laugh until your stomach hurts. I want to hear your random stories, your thoughts at midnight, the things you think are too small to matter. Because if it’s important to you, then it’s important to me too.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <p>And I want to be there for all of it.</p>
+        <p>I want to be the person you can come to when you’re happy, but also when you’re tired, overwhelmed, or just having a bad day. I want to be someone you feel safe with. Someone you don’t have to pretend around. I want to listen when you need to let everything out, hold you when words aren’t enough, and remind you that you don’t have to figure everything out alone.</p>
+        <p>I don’t just want to love the easy parts of you. I want to love you through the messy days too. Through the misunderstandings, the growing pains, the moments when we’re both still learning how to love each other better. I know we won’t always get everything right, but I hope we’ll always choose to understand each other, to talk things through, and to find our way back to one another.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <div class="photo-frame tilt-right">
+            
+            <img src="drive-download-20261008T102658Z-1-001/webcam-toy-photo5 (1).jpeg" alt="Photo 3"> 
+        </div>
+        <p>Because when I think about forever, I don’t imagine something perfect. I imagine something real.</p>
+        <p>I imagine growing older with you. Watching our lives change, watching ourselves change, and still finding pieces of the people we were when all of this started. I imagine looking back at old pictures, old messages, old songs, and laughing at how young we were. I imagine us remembering all the little moments that brought us here.</p>
+        <p>And if one day, years from now, you find something I wrote for you today, I hope you can still feel how much I meant every word.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <p>I hope you know that when I say I want you, I don’t only mean right now.</p>
+        <p>I want the ordinary days with you. The quiet mornings, the late-night conversations, the random grocery runs, the long drives, the little arguments, the apologies, the laughter, the hugs, and all the moments that probably won’t seem important until we look back on them.</p>
+        <p>I want to be there when the sunlight hits your face. I want to be there for the days when everything feels right, and especially for the days when it doesn’t.</p>
+        <p>I want to keep choosing you as we grow, as everything around us changes, and as we become different versions of ourselves.</p>
+        <p>Because all that to say, love, I don’t just want a moment with you.</p>
+        <p>I want a life with you.</p>
+    </section>
+
+    
+    <section class="page theme-dark left-align">
+        <h2 class="script">bampira</h2>
+        <p>Kung bampira tayo, siguro hindi ako matatakot sa habang-buhay.</p>
+        <p>Hindi ako matatakot na baka dumating ang araw na mapagod ka sa akin, o ako sa’yo, o tuluyan nang manlamig ang mundong dati nating pinapangarap.</p>
+        <p>Dahil may oras tayo. Sobra-sobra. May isang gabi para sa unang halik, isang daang taon para sa mga kwento, at isang libong tag-araw para matutunan kung paano kita mahalin sa bawat bersyon mo.</p>
+        <p>Lalabas tayo kapag tulog na ang mundo. Maglalakad sa mga kalsadang wala nang ibang tao, habang ang buwan lang ang nakakaalam kung saan tayo pupunta.</p>
+    </section>
+
+    
+    <section class="page theme-dark left-align">
+        <div class="photo-frame tilt-left">
+            
+            <img src="drive-download-20261008T102658Z-1-001/fxn 2026-09-11 17325264FFF48FE93E.jpg" alt="Photo 4"> 
+        </div>
+        <p>At kung dumating ang araw na wala na tayong mapuntahan, aalis tayo. Hindi dahil ayaw na natin sa mundo, kundi dahil gusto nating makita kung ano pa ang nasa dulo nito. Baka sa ibang bansa, ibang dagat, ibang planeta. Baka doon natin makita ang lugar na matagal nating hinahanap.</p>
+        <p>At kung wala man, ayos lang. Basta ikaw ay mananatili sa aking tabi.</p>
+        <p>Kahit araw-araw nating kailangang magtago mula sa araw, kahit iwan man natin ang mundong ito, basta ikaw ang kasama ko.</p>
+    </section>
+
+    
+    <section class="page theme-dark left-align">
+        <p>Hindi dahil madali kang mahalin. Kundi dahil ikaw ka. Mamahalin kita sa mga araw na madali, at lalo na sa mga araw na hindi mo kayang mahalin ang sarili mo.</p>
+        <p>At kung minsan maging maingay ang isip mo, hahayaan kitang magsalita hanggang sa maubos ang mga gusto mong sabihin.</p>
+        <p>Kung mapagod ka, dito ka lang. Hindi kita kailangang iligtas sa lahat ng bagay. Pwede kitang samahan habang inililigtas mo ang sarili mo.</p>
+        <p>Siguro iyon ang pinakamagandang bahagi ng pagiging bampira—hindi ang walang katapusang buhay, kundi ang pagkakaroon ng walang katapusang pagkakataon na piliin ka.</p>
+    </section>
+
+    
+    <section class="page theme-dark left-align">
+        <p>Dahil sa isang ordinaryong buhay, baka kulangin tayo sa panahon. Baka hindi ko masabi lahat ng gusto kong sabihin. Baka matapos ang lahat bago ko pa maikwento kung gaano kita minahal.</p>
+        <p>Kaya kung bibigyan ako ng pagpipilian, hindi ko hihingin ang buhay na walang katapusan. Hihingin ko lang ang sapat na habang-buhay para makasama ka.</p>
+        <p>At kung sakaling kahit walang katapusan ay kulang pa rin, hahayaan kitang hawakan ang kamay ko, at sabay nating sabihin—sige, isa pang siglo.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <h3>There is a little boy inside me who only comes out when he knows you are near.</h3>
+        <p>I used to think I had lost him somewhere between growing older and learning how to carry myself. Perhaps I buried him beneath all the things I thought I had to become: the carefulness, the restraint, the quiet calculations before speaking, the habit of swallowing what I wanted to say.</p>
+        <p>He was there once. I remember him vaguely.</p>
+        <p>He was not afraid of being excited. He found entire worlds in small things. He laughed with his whole body. He loved without first asking whether it was sensible to do so. He believed that happiness did not need to be justified.</p>
+        <p>Then I grew up, and somewhere along the way, I taught him to be quiet.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <div class="photo-frame tilt-right">
+            
+            <img src="drive-download-20261008T102658Z-1-001/webcam-toy-photo6 (1).jpeg" alt="Photo 5"> 
+        </div>
+        <p>But you have a strange way of finding him.</p>
+        <p>Whenever I am with you, he peeks through the cracks.</p>
+        <p>Suddenly, I am laughing at things that are not even funny. I become excited over the smallest details. I want to tell you everything, even the things that do not matter. I find myself wanting to show you the little corners of my world as if I were a child bringing home a handful of flowers, proud of having found them.</p>
+        <p>You make me forget to be embarrassed by my own happiness.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <p>And perhaps that is one of the things I love most about you. You never had to tell me to become confident. Somehow, your presence taught me.</p>
+        <p>There are days when I look at myself and find that I stand a little straighter. I speak a little more freely. I try things I would have once convinced myself I could not do. Not because you asked me to become someone greater, but because being seen by you made me wonder if perhaps I was already capable of becoming that person.</p>
+        <p>You make me want to meet the world with both hands open.</p>
+        <p>There is something about being loved by someone who sees you clearly that makes hiding feel unnecessary.</p>
+        <p>And you have seen me.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <p>Not only the person I have learned to present to everyone else, but the boy underneath him. The one who is still learning. The one who gets scared. The one who gets excited too easily. The one who wants to be held by the world without having to pretend he is not tired of carrying himself through it.</p>
+        <p>You make room for him. So he stays.</p>
+        <p>I think that is why your presence has changed the shape of my happiness.</p>
+        <p>Before you, happiness sometimes felt like something I had to search for, something distant enough that I needed to reach for it. With you, it has become smaller and closer. It lives in ordinary things: your name appearing on my screen, a stupid conversation, a moment I know I will remember later, the quiet realization that somewhere in this enormous world, there is a person whose existence has become part of mine.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <p>You have become a kind of light I did not know I was missing. Not the kind that blinds you. The kind that lets you see yourself. And when I look closely, I find him there again.</p>
+        <p>That little boy. Still laughing. Still dreaming. Still reaching for things with both hands. Still unafraid, for a moment, to love something simply because it makes him happy.</p>
+        <p>I think I love that you brought him back to me. I think I love that, because of you, I no longer feel ashamed of how much joy I can hold.</p>
+        <p>And if there is one thing I hope you always know, it is this:</p>
+        <p>Having you in my life has made me feel more like myself. Not a newer version. Not a better version. Just more myself.</p>
+        <p>As though some forgotten part of me had been waiting all this time for someone to knock gently on the door and say, You can come out now.</p>
+        <p>And somehow, it was you.</p>
+    </section>
+
+    
+    <section class="page theme-sage left-align">
+        <h1>my Risecel,</h1>
+        <p>when the night feels heavy and tomorrow feels uncertain, rest.</p>
+        <p>you don't have to figure out everything tonight. let the world wait.</p>
+        <p>morning will come, and with it, another chance to breathe, to begin again, to find your way home to yourself.</p>
+        <p>so don't be afraid, my love. whatever comes, we will meet it one day at a time.</p>
+        <p>and if you ever forget, let me remind you— you have survived every difficult day that came before this one.</p>
+        <p>you will survive this, too. it will be alright.</p>
+    </section>
+
+    
+    <section class="page theme-cream sans left-align">
+        <div class="photo-frame tilt-left">
+            
+            <img src="drive-download-20261008T102658Z-1-001/Screenshot 2026-10-08 183038.png" alt="Photo 6"> 
+        </div>
+        <p>I know you like honey butter, V-Cut barbecue, isaw, shrimp, Zinger Steak, Coco, Madissiomai, Siopao from Lola Nena's, and chocolate lava cake from McDonald's.</p>
+        <p>I know you hate fish, longganisa, and tinola.</p>
+        <p>But I also know you like being listened to, being cared for, and having someone initiate without having to ask.</p>
+        <p>I know you don't like empty promises, or words that don't become actions. So I won't promise you that I'll always get everything right.</p>
+        <p>I'll just remember. I'll listen. I'll show up. I'll let my actions speak louder than anything I could ever promise you.</p>
+        <p>Because if I say I love you, I want you to feel it in the little things.</p>
+    </section>
+
+    
+    <section class="page theme-sage left-align">
+        <h2>Dear future you,</h2>
+        <p>I wonder who you will become. There are still so many versions of you I haven't met yet. The you who will dream bigger, the you who will become braver, the you who will learn things that the girl I know today has not yet discovered.</p>
+        <p>I hope you are kind to her. I hope you remember the girl you are now and how hard she tried to become you.</p>
+        <p>I hope you never forget the little things that make you happy. The foods you love, the songs you replay, the things that make you laugh until you forget to be embarrassed.</p>
+        <p>And when life becomes difficult, I hope you remember that you have always been more capable than you thought.</p>
+        <p>I don't know where life will take you. But wherever you end up, I hope you are happy there.</p>
+        <p>And if I am lucky enough to still be somewhere in your story when you read this, I hope I get to meet every version of you along the way. The girl you are now. The woman you become. And every beautiful version in between.</p>
+        <p>Until then, I'll keep loving the you I know today, and I'll look forward to meeting the you I haven't met yet.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <h2>Dear God,</h2>
+        <p>I do not know if I have ever thanked You properly for her.</p>
+        <p>I have thanked You for many things before: for answered prayers, for the days that went well, for the doors You opened and the ones You closed. But tonight, I want to thank You for something more specific.</p>
+        <p>I want to thank You for leading me to her.</p>
+        <p>Of all the people I could have met, of all the roads I could have taken, of all the places our lives could have passed without ever touching, somehow, You allowed mine to cross with hers.</p>
+        <p>And I cannot help but wonder if You knew. If You knew that somewhere along the way, I would meet a girl who would make ordinary days feel less ordinary. Someone who would make me laugh at the smallest things, someone whose presence would slowly become a part of the way I see the world.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <div class="photo-frame tilt-right">
+            
+            <img src="drive-download-20261008T102658Z-1-001/webcam-toy-photo7 (1).jpeg" alt="Photo 7"> 
+        </div>
+        <p>Maybe You knew that I needed her before I even knew that I did.</p>
+        <p>You knew I needed someone who could bring the little boy in me back to life. Someone who could make me excited about the smallest things again. Someone who could make me feel comfortable being soft, being foolish, being completely myself.</p>
+        <p>You knew I needed someone who would make me want to become more confident, not because I was not enough, but because she made me believe there was so much more of myself worth becoming.</p>
+        <p>And You gave me her.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <p>I know I am not entitled to any of it. Not her time. Not her laughter. Not her presence. Not even the privilege of being part of her life.</p>
+        <p>That is why I am grateful. Because somehow, for some reason I may never fully understand, You let me have the chance to know her.</p>
+        <p>You let me know what it feels like to look forward to someone's name appearing on my screen. To have stories I cannot wait to tell. To have someone who can turn an ordinary afternoon into something I want to remember.</p>
+        <p>You let me love someone who reminds me that there is still so much goodness in being alive.</p>
+        <p>And God, I hope You know how thankful I am for that.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <p>I do not know where You intend for our paths to lead. I do not know how many chapters You have written for us, or whether I will understand the reasons behind every turn.</p>
+        <p>But I trust You. Because if You were kind enough to lead me to her once, then I trust that You know where You are leading us now.</p>
+        <p>So I will not ask You for a perfect story. I will only ask that I never become too distracted by the uncertainty of tomorrow that I forget to be grateful for the gift of today.</p>
+        <p>Today, I know her. Today, I get to love her. Today, I get to say that somewhere in this enormous world, there is a person named Risecel whose existence has changed mine.</p>
+    </section>
+
+    
+    <section class="page theme-cream left-align">
+        <p>And for that, thank You. Thank You for the timing. Thank You for the coincidence that perhaps was not a coincidence at all. Thank You for every road that brought us closer. Thank You for every wrong turn that somehow still led me here.</p>
+        <p>And most of all, thank You for leading me to her.</p>
+        <p>I do not know what I did to deserve such a beautiful chapter in my life. But I know that I will always be grateful that You wrote her into it.</p>
+    </section>
+
+    
+    <section class="page theme-dark left-align">
+        <h2>They say the Bakunawa comes for the moon.</h2>
+        <p>That she rises from the sea with her body winding through the night, her eyes fixed upon the light above her.</p>
+        <p>They say she wants to swallow it. But I wonder if anyone ever asked what the moon feels when the Bakunawa reaches for it.</p>
+        <p>Because if I am the moon, then I do not fear her. I know she is beneath me, somewhere in the darkness, looking up. And perhaps I shine a little brighter because I know she is there.</p>
+        <p>She is the Bakunawa, and I am her moon. Every night, she reaches for me. And every night, I let her come a little closer.</p>
+        <p>Maybe that is what our love is: a creature from the sea trying to reach something she was never meant to touch, and a moon that keeps shining anyway.</p>
+        <p>There will be nights when she cannot find me. There will be nights when clouds cover my light and she thinks I have disappeared. But I will always return.</p>
+        <p>And if she ever forgets where to look, I hope she remembers— I have always been right here, shining for her.</p>
+    </section>
+
+    
+    <section class="page theme-dark">
+        <div class="photo-frame tilt-left" style="margin-bottom: 3rem;">
+            
+            <img src="drive-download-20261008T102658Z-1-001/webcam-toy-photo5 (1).jpeg" alt="Photo 8"> 
+        </div>
+        <p class="script" style="margin-bottom: 2rem;">until my last breath</p>
+        <p>when my hands are old and my voice has grown quiet, when the years have taken everything they could from me, I think I will still remember you.</p>
+        <p>and when I am lying there, somewhere between this world and whatever comes after, I will hold my breath just a little longer.</p>
+        <p>just long enough to find your hand, just long enough to look at you one last time, and with whatever remains of my voice, I will tell you what I have spent a lifetime trying to say:</p>
+        <p class="script" style="font-size: 3.5rem; margin-top: 3.5rem;">I love you.</p>
+        <p style="margin-top: 2rem;">and then, I will let myself breathe.</p>
+    </section>
+
+</div>
+
+</body>
+</html>
