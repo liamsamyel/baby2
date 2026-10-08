@@ -59,9 +59,42 @@
             position: relative;
         }
 
+        .page::after {
+            content: counter(page-number);
+            position: absolute;
+            bottom: 1rem;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            opacity: 0.65;
+        }
+
+        .zine-container { counter-reset: page-number; }
+        .page { counter-increment: page-number; }
+
         .theme-dark { background-color: var(--dark-green); color: var(--cream); }
         .theme-cream { background-color: var(--cream); color: var(--text-dark); }
         .theme-sage { background-color: var(--sage); color: var(--text-dark); }
+
+        .contents-title { margin-bottom: 1.5rem; }
+        .contents-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        .contents-list li { margin: 0.65rem 0; }
+        .contents-list a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 0.15rem;
+        }
+        .contents-list a:hover,
+        .contents-list a:focus-visible { opacity: 0.7; }
 
         h1, h2, h3 { font-weight: 500; margin-bottom: 1.5rem; margin-top: 0; letter-spacing: 0.5px; }
         p { 
@@ -145,12 +178,27 @@
 
     
     <section class="page theme-sage">
-        <h2 class="script">table of contents to</h2>
+        <h2 class="script contents-title">table of contents</h2>
+        <nav aria-label="Table of contents">
+            <ol class="contents-list">
+                <li><a href="#xi">XI</a></li>
+                <li><a href="#km">km</a></li>
+                <li><a href="#someday">Maybe Someday, Love Will Feel Simple with You</a></li>
+                <li><a href="#bampira">Bampira</a></li>
+                <li><a href="#little-boy">There Is a Little Boy Inside Me</a></li>
+                <li><a href="#my-risecel">My Risecel</a></li>
+                <li><a href="#little-things">The Little Things I Remember</a></li>
+                <li><a href="#future-you">Dear Future You</a></li>
+                <li><a href="#dear-god">Dear God</a></li>
+                <li><a href="#bakunawa">The Bakunawa and the Moon</a></li>
+                <li><a href="#last-breath">Until My Last Breath</a></li>
+            </ol>
+        </nav>
     </section>
 
-    
-    <section class="page theme-cream left-align">
-        <h1 class="sans" style="font-size: 3rem;">XI</h1>
+
+    <section class="page theme-cream left-align" id="xi">
+        <h1 class="script" style="font-size: 3rem;">XI</h1>
         <p>There are eleven numbers before twelve, eleven steps before the next beginning, eleven on a calendar that would have meant nothing to me if it had not been the day you said yes.</p>
         <p>Before that day, you were someone I was still learning to know. Someone whose messages I waited for, whose presence slowly became something I looked forward to, whose name began to carry a different kind of weight in my heart.</p>
         <p>But on the eleventh, something changed.</p>
@@ -176,8 +224,8 @@
     </section>
 
     
-    <section class="page theme-cream left-align">
-        <h2 class="sans" style="font-size: 2rem;">km</h2>
+    <section class="page theme-cream left-align" id="km">
+        <h1 class="script" style="font-size: 3rem;">km</h1>
         <p>sa loob ng tatlonpu't isang kilometro na layo, walang mas hihigit pa sa pagmamahal ko sa'yo.</p>
         <p>hindi rason ang layong ito, para ikaw ay hindi dayuhin. marilao patungong hagonoy, kaya kong saglitin.</p>
         <p>kahit sabihin mo'ng mahirap sumakay, matraffic, malayo, mapapagod lang ako. iyan lamang ay mga dahilan na kaya kong palampasin, dahil alam kong mawawala lahat ng 'yan kapag narating ko na ang destinasyon ko ikaw.</p>
@@ -203,7 +251,7 @@
     </section>
 
     
-    <section class="page theme-cream left-align">
+    <section class="page theme-cream left-align" id="someday">
         <h2>Maybe someday, love will feel simple with you.</h2>
         <p>Not in a way that makes it boring or ordinary, but in a way that makes it feel like home. Maybe someday, we’ll wake up beside each other and the first thing I see is your face in the morning light. Maybe we’ll have a little place of our own, maybe it’ll be too small for everything we want, and we’ll have to squeeze ourselves into one bed anyway. Maybe we’ll have our own little routines, our own jokes, our own things that only make sense to us.</p>
         <p>I want to know you in all the little ways that time allows. I want to know the things you’ll love years from now, the things that will never change, and even the things that will. I want to know what makes you excited, what makes you nervous, what makes you laugh until your stomach hurts. I want to hear your random stories, your thoughts at midnight, the things you think are too small to matter. Because if it’s important to you, then it’s important to me too.</p>
@@ -238,7 +286,7 @@
     </section>
 
     
-    <section class="page theme-dark left-align">
+    <section class="page theme-dark left-align" id="bampira">
         <h2 class="script">bampira</h2>
         <p>Kung bampira tayo, siguro hindi ako matatakot sa habang-buhay.</p>
         <p>Hindi ako matatakot na baka dumating ang araw na mapagod ka sa akin, o ako sa’yo, o tuluyan nang manlamig ang mundong dati nating pinapangarap.</p>
@@ -273,7 +321,7 @@
     </section>
 
     
-    <section class="page theme-cream left-align">
+    <section class="page theme-cream left-align" id="little-boy">
         <h3>There is a little boy inside me who only comes out when he knows you are near.</h3>
         <p>I used to think I had lost him somewhere between growing older and learning how to carry myself. Perhaps I buried him beneath all the things I thought I had to become: the carefulness, the restraint, the quiet calculations before speaking, the habit of swallowing what I wanted to say.</p>
         <p>He was there once. I remember him vaguely.</p>
@@ -322,8 +370,8 @@
     </section>
 
     
-    <section class="page theme-sage left-align">
-        <h1>my Risecel,</h1>
+    <section class="page theme-sage left-align" id="my-risecel">
+        <h1 class="script">my Risecel,</h1>
         <p>when the night feels heavy and tomorrow feels uncertain, rest.</p>
         <p>you don't have to figure out everything tonight. let the world wait.</p>
         <p>morning will come, and with it, another chance to breathe, to begin again, to find your way home to yourself.</p>
@@ -333,7 +381,7 @@
     </section>
 
     
-    <section class="page theme-cream sans left-align">
+    <section class="page theme-cream sans left-align" id="little-things">
         <div class="photo-frame tilt-left">
             
             <img src="drive-download-20261008T102658Z-1-001/Screenshot 2026-10-08 183038.png" alt="Photo 6"> 
@@ -347,7 +395,7 @@
     </section>
 
     
-    <section class="page theme-sage left-align">
+    <section class="page theme-sage left-align" id="future-you">
         <h2>Dear future you,</h2>
         <p>I wonder who you will become. There are still so many versions of you I haven't met yet. The you who will dream bigger, the you who will become braver, the you who will learn things that the girl I know today has not yet discovered.</p>
         <p>I hope you are kind to her. I hope you remember the girl you are now and how hard she tried to become you.</p>
@@ -359,8 +407,8 @@
     </section>
 
     
-    <section class="page theme-cream left-align">
-        <h2>Dear God,</h2>
+    <section class="page theme-cream left-align" id="dear-god">
+        <h2 class="script">Dear God,</h2>
         <p>I do not know if I have ever thanked You properly for her.</p>
         <p>I have thanked You for many things before: for answered prayers, for the days that went well, for the doors You opened and the ones You closed. But tonight, I want to thank You for something more specific.</p>
         <p>I want to thank You for leading me to her.</p>
@@ -405,7 +453,7 @@
     </section>
 
     
-    <section class="page theme-dark left-align">
+    <section class="page theme-dark left-align" id="bakunawa">
         <h2>They say the Bakunawa comes for the moon.</h2>
         <p>That she rises from the sea with her body winding through the night, her eyes fixed upon the light above her.</p>
         <p>They say she wants to swallow it. But I wonder if anyone ever asked what the moon feels when the Bakunawa reaches for it.</p>
@@ -417,7 +465,7 @@
     </section>
 
     
-    <section class="page theme-dark">
+    <section class="page theme-dark" id="last-breath">
         <div class="photo-frame tilt-left" style="margin-bottom: 3rem;">
             
             <img src="drive-download-20261008T102658Z-1-001/webcam-toy-photo5 (1).jpeg" alt="Photo 8"> 
